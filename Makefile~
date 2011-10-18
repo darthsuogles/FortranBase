@@ -1,0 +1,11 @@
+all: linAlg_test
+
+linalg_test: linAlg_test.f90 mLinAlg.o mGutenberg.o	
+	ifort linAlg_test.f90 -o linAlg_test mLinAlg.o mGutenberg.o
+
+
+mLinAlg.o: mLinAlg.f90
+	ifort -fpp -c mlinAlg.f90
+
+mGutenberg.o: mGutenberg.f90
+	ifort -c mGutenberg.f90

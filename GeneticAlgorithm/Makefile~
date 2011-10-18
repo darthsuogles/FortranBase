@@ -1,0 +1,14 @@
+all: darwin
+
+darwin: darwin.f90 numz.o rand.o
+	ifort -o darwin darwin.f90
+
+rand.o: rand_mod.f90
+	ifort -c rand_mod.f90
+
+numz.o: numz.f90
+	ifort -c numz.f90
+
+clean:
+	rm darwin
+	rm *.o *.mod

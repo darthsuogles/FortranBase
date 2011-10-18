@@ -1,0 +1,36 @@
+! The Fermat Factorization Method
+program fermat_factorization
+
+  implicit none
+
+  integer, parameter:: double = selected_real_kind(15,307)
+  integer, parameter:: long = selected_int_kind(18)
+  integer:: a, a2, b2
+  integer(kind=4)::  n = 600851475143
+  real(double):: b, thresh = tiny(1.0_double)
+
+  !do n = a, 2
+ 
+  print *, selected_int_kind(16)
+  print *, selected_int_kind(32)
+  print *, selected_int_kind(64)
+  
+  a = ceiling(sqrt(real(n)))
+  a2 = a*a
+  b2 = a2 - n
+  b = sqrt(real(b2))
+
+  do while (abs(b-int(b)) > thresh .or. (a-int(b))*(a+int(b)) /= n)
+     a = a + 1
+     a2 = a*a
+     b2 = a2 - n
+     b = sqrt(real(b2))
+     !      print *, a, b, b2
+  end do
+
+  print *, n, 'factorized as:', &
+       a-int(b), a+int(b), (a-int(b))*(a+int(b))
+
+  !end do
+
+end program fermat_factorization

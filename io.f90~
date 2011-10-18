@@ -1,0 +1,15 @@
+program io_test
+
+implicit none
+integer:: i=98, a=0, b=1
+character:: str(43) = ' 10 100 '
+
+write(*,'(a10, i0)') "i0", i
+write(*,'(a10, i5)') "i5", i
+write(*,'(a10, i5.3)' ) "i5.3", i
+write(*,'(a10, i1)') "i1", i
+
+!read("100 10", *) a, b
+!write(*, '(2i0)') a, b
+
+end program io_test

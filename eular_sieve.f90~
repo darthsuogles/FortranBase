@@ -1,0 +1,37 @@
+! Eular Sieve 
+! 
+! An improved version of the Sieve of Eratothenes
+! The algorithm finds prime numbers up to a certain integer
+
+program sieve_erato
+
+#define N 100
+
+implicit none
+logical:: checker(N)
+integer:: n = N, k, i, k2
+integer:: prefix = 1 ! store the product here
+integer:: idx = 1 ! store the position of first 'prime' in current list
+integer:: cp
+
+checker = .true.
+do k=2,n
+   if ( checker(k) ) then
+      k2 = k*k
+   else
+      cycle
+   end if
+
+   do i=k2+k2, n*k, k2
+      checker(i/k) = .false.      
+   end do
+end do
+
+do k=2,n
+   if (checker(k)) then
+      write(*,'(i0, 1x)', advance='no') k
+   end if
+end do
+write(*, '(1x)')
+
+end program sieve_erato
