@@ -1,5 +1,0 @@
-module rand_mod
-! module contains three funcitons
-! ran1 returns a uniform random number between 0-1
-! spread returns random number between min - max
-! normal returns a normal distribution
