@@ -1,1 +1,6 @@
 A collection of fortran programs that I wrote
+
+- doc: contains a few introductory slides and references provided by Alin Elina
+- GeneticAlgorithm: simple genetic algorithm implementation
+- LinearAlgebra: module based simple linear algebra package
+- project_eular: solution to a small set of problems listed on Project Eular website

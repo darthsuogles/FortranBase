@@ -5,6 +5,7 @@
 
 program sieve_eular
 
+! To activate macros, use -cpp option
 #define N 100
 
 implicit none
